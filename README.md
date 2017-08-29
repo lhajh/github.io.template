@@ -9,7 +9,7 @@
 * [Fork 指南](#fork-指南)
 * [贴心提示](#贴心提示)
 * [经验与思考](#经验与思考)
-* [tracking_id和Disqus](#tracking_id和Disqus)
+* [评论和浏览统计](#评论和浏览统计)
 * [致谢](#致谢)
 
 <!-- vim-markdown-toc -->
@@ -30,7 +30,7 @@ Fork 本项目之后，还需要做一些事情才能让你的页面「正确」
 
 2. 修改配置。
 
-   网站的配置基本都集中在 /_config.yml 文件中，将其中与个人信息相关的部分替换成你自己的，比如网站的 title、url、tracking_id(网站流量统计) 和 Disqus(评论系统) 的用户名等。如果你着急看到效果，tracking_id和Disqus可以先不设置。这两个设置见最后。
+   网站的配置基本都集中在 /_config.yml 文件中，将其中与个人信息相关的部分替换成你自己的，比如网站的 title、url、tracking_id(网站流量统计) 和 Disqus(评论系统) 的用户名等。如果你着急看到效果，tracking_id和Disqus可以先不设置。这两个设置见[评论和浏览统计](#评论和浏览统计)。
 
 3. 删除我的文章与图片。
 
@@ -64,7 +64,7 @@ Fork 本项目之后，还需要做一些事情才能让你的页面「正确」
 
 * 可以学习一下那些高质量的博主，他们的行文，内容组织方式，有什么值得借鉴的地方。
 
-## tracking_id和Disqus
+## 评论和浏览统计
 
 - [Disqus](https://disqus.com/)
 - [tracking_id](http://www.google.cn/analytics/analytics/#)
