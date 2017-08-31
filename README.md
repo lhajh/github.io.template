@@ -81,14 +81,23 @@ Fork 本项目之后，还需要做一些事情才能让你的页面「正确」
 在 /_config.yml 文件中，修改`disque: your Website Name.disqus.com`.
 注意：这个Website Name是和选择`Category`一起设置的那个，不是第二次设置的那个，第二次设置的是在评论系统上面显示的名字，如下图：
 
-![](/assets/images/JRdd4H.png)
+![Disqus interface](/assets/images/JRdd4H.png)
 
 ### 网站统计
-[Google Analytics官网](http://www.google.cn/analytics/analytics/#)，使用Google账号登录，点击右上角`SIGN IN`，选择`Analytics`，设置好账号和媒体资源后(名称随便)，点击左上角全部网站数据，如下图:
+[Google Analytics(GA)](http://www.google.cn/analytics/analytics/#)是著名互联网公司谷歌提供的网站数据统计服务,可以实时监控网站上发生的活动。
+使用Google账号登录，点击右上角`SIGN IN`，选择`Analytics`,进入GA管理页面,配置跟踪站点，如下图：
 
-![](/assets/images/erYC37.png)
+![set website](/assets/images/aF3Jf.png)
 
-将上图中红线圈出的ID填写到 `/_config.yml`的`tracking_id : 'UA-105384948-1'`
+设置好账号名称、网站名称和网站网址(注意区分http和https)，选择行业类别和报告时区。拉到页面最底下，点击获取跟踪ID，如下图：
+
+![fetch ID](/assets/images/bhE6Jf.png)
+
+在“管理 >> 跟踪信息 >> 跟踪代码”中找到你的跟踪ID,如下图：
+
+![track ID](/assets/images/Ce4K8g.png)
+
+将上图中跟踪ID填写到 `/_config.yml`的`tracking_id : 'UA-xxxx-1'`
 
 ## 致谢
 
