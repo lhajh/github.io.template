@@ -1,39 +1,70 @@
 <div class="row">
 
     <div class="col-md-8">
-
         <!-- Blog list -->
-        <ul id="posts-list">
-            {% for post in site.posts %}
-            <li class="posts-list-item">
-                <div class="posts-content">
-                    <span class="posts-list-meta">{{ post.date | date: "%Y-%m-%d" }}</span>
+        <section class="posts-content">
+            {% assign sorted_categories = site.categories | sort %} {% for category in sorted_categories %}
+            <h3>{{ category | first }}</h3>
+            <ol class="posts-list" id="{{ category[0] }}">
+                {% for post in category.last %}
+                <li class="posts-list-item">
+                    <span class="posts-list-meta">{{ post.date | date:"%Y-%m-%d" }}</span>
                     <a class="posts-list-name bubble-float-left" href="{{ site.url }}{{ post.url }}">{{ post.title }}</a>
                     <span class='circle'></span>
-                </div>
-            </li>
+                </li>
+                {% endfor %}
+            </ol>
             {% endfor %}
-        </ul>
+        </section>
 
         <!-- Pagination -->
-        {% include pagination.html %}
+        <!-- {% include pagination.html %} -->
 
         <!-- Comments -->
         {% include disqus-comments.html %}
 
     </div>
 
-    <div class="col-md-4">
+    <div class="col-md-4 sidebar-post-tag">
         {% include sidebar-search.html %}
         {% include sidebar-post-tag.html %}
     </div>
 
 </div>
 <script>
-    $(document).ready(function(){
+    $(document).ready(function () {
 
         // Enable bootstrap tooltip
         $("body").tooltip({ selector: '[data-toggle=tooltip]' });
 
+        // var fixmeTop = $('.sidebar-post-tag').offset().top - 100;       // get initial position of the element
+
+        // $(window).scroll(function() {                  // assign scroll event listener
+
+        //     var currentScroll = $(window).scrollTop(); // get current position
+
+        //     if (currentScroll >= fixmeTop) {           // apply position: fixed if you
+        //         $('.sidebar-post-tag').css({      // scroll to that element or below it
+        //             top: '100px',
+        //             bottom: '20px',
+        //             right: '30px',
+        //             position: 'fixed'
+        //         });
+        //     } else {                                   // apply position: static
+        //         $('.sidebar-post-tag').css({      // if you scroll above it
+        //             position: 'inherit'
+        //         });
+        //     }
+
+        // });
+
+        $(window).scroll(scroll)
+
+        scroll()
+
+        function scroll() {
+            let top = 450 - $(window).scrollTop() >= 100 ? 450 - $(window).scrollTop() : 100
+            $('.sidebar-post-tag').css('top', top)
+        }
     });
 </script>

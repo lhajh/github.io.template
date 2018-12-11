@@ -24,7 +24,7 @@ css: ['sidebar-post-nav.css']
             {% include disqus-comments.html %}
         </div>
 
-        <div class="col-md-4">
+        <div class="col-md-4 sidebar-post-tag">
             {% include sidebar-search.html %}
             {% include sidebar-post-nav.html %}
         </div>
@@ -33,3 +33,26 @@ css: ['sidebar-post-nav.css']
     </div>
 
 </article>
+
+<script>
+    $(document).ready(function () {
+        var top = $('.sidebar-post-tag').offset().top
+        scroll()
+        $(window).scroll(scroll)
+
+        function scroll () {
+            var scrollTop = top - $(window).scrollTop()
+            if (scrollTop < 100) {
+                $('.sidebar-post-tag').css({
+                    position: 'fixed',
+                    top: 100
+                })
+            } else {
+                $('.sidebar-post-tag').css({
+                    position: 'fixed',
+                    top: scrollTop
+                })
+            }
+        }
+    });
+</script>
